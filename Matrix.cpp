@@ -13,27 +13,27 @@ void Matrix::Show_mass()
 	cout << "\n";
 }
 
-Matrix Matrix::operator+(Matrix a)
+Matrix Matrix::operator+(Matrix a) // перегрузка оператора сложения
 {
 	Matrix temp;
 		for (int i = 0; i < 10; i++)
 		{
 			for (int j = 0; j < 10; j++)
 			{
-				temp.mass[i][j] = mass[i][j] + a.mass[i][j];
+				temp.mass[i][j] = mass[i][j] + a.mass[i][j]; // здесь просто складываем значения матрицы, каждого элемента с каждым
 			}
 		}
 		return temp;
 }
 
-Matrix Summ(Matrix a, Matrix b)
+Matrix Summ(Matrix a, Matrix b) // функция слжения, она уже использует перегреженный +
 {
 	Matrix temp;
 	temp = a + b;
 	return temp;
 }
 
-void Matrix1::FindMax(Matrix a)
+void Matrix1::FindMax(Matrix a) // нахождение максимального числа в строке, тут все просто
 {
 	for (int i = 0; i < 10; i++)
 	{
@@ -45,7 +45,7 @@ void Matrix1::FindMax(Matrix a)
 				result = a.mass[i][j];
 			}
 		}
-		cout << "Max of row " << i << " - " << result << "\n";
+		cout << "Max of row " << i << " - " << result << "\n"; // выводим результат
 	}
 	cout << "\n";
 }
